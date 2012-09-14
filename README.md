@@ -16,8 +16,9 @@ Check out the [Project Page](http://ultcombo.github.com/UltButtons/)!
 ##How to use
 Include jQuery, jQuery UI and then ultbuttons.js as follows:
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/themes/trontastic/jquery-ui.css" />
     <script src="ultbuttons.js"></script>
 
 Then just call the improved `.ultButton()`/`.ultButtonset()` instead of the native jQuery UI's `.button()`/`.buttonset()`.
