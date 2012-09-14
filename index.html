@@ -71,8 +71,7 @@
 		<ul>
 		<li>Calling <code>.ultButton()</code>/<code>.ultButtonset()</code> on actual buttons won't have any improvement effect, as <code>.button()</code>/<code>.buttonset()</code> works as it should on actual buttons. This plugin is intended for Checkboxes/Radio UI buttons, but calling it on actual buttons won't break anything either. <code>=]</code>
 		</li>
-		<li>
-		<strong>UltButtons</strong> does not create any extra markup, instead, it works on top of the original jQuery UI <code>button</code>/<code>buttonset</code> methods.</li>
+		<li><strong>UltButtons</strong> does not create any extra markup, instead, it works on top of the original jQuery UI <code>button</code>/<code>buttonset</code> methods.</li>
 		<li>The plugin also does not use any globals, it creates a namespace inside the jQuery object to store the necessary data.</li>
 		<li>It adds 3 listeners to the <code>document</code>, so if you ever need to call <code>$(document).off('mousedown')</code> or such, specify a named function handler to remove in the second parameter, to warrant that it won't break the plugin functionality.</li>
 		<li>The plugin requires jQuery 1.7 at least, recommended is 1.8+</li>
