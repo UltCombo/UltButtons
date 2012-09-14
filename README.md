@@ -11,7 +11,7 @@ Improves jQuery UI Checkbox/Radio Buttons functionality.
 
 ##Demo
 
-Soon
+Check out the [Project Page](http://ultcombo.github.com/UltButtons/)!
 
 ##How to use
 Include jQuery, jQuery UI and then ultbuttons.js as follows:
