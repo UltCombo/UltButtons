@@ -23,19 +23,19 @@
 	}
 
 	$(document).mousedown(function(e) {
-		if (e.which !== 1) return false;
+		if (e.which !== 1) return;
 		$.UltC.mdtarg = e.target;
 	}).on('mousedown', 'label.ui-button', function(e) {
-		if (e.which !== 1) return false;
+		if (e.which !== 1) return;
 		var $this = $(this);
-		$this.data('checked', $this.prev()[0].checked);
+		$this.data('checked', $('input[id="'+ $this.attr('for') + '"]')[0].checked);
 	}).on('mouseup', 'label.ui-button', function(e) {
-		if (e.which !== 1) return false;
+		if (e.which !== 1) return;
 		var $this = $(this),
-			$ch = $this.prev(),
+			$ch = $('input[id="'+ $this.attr('for') + '"]'),
 			ch = $ch[0];
 		setTimeout(function() {
-			if (ch.disabled) return false;
+			if (ch.disabled) return;
 			var targ = $.UltC.mdtarg;
 			if ($this.data('checked') === ch.checked && ($this.has(targ).length || targ === $this[0])) {
 				if ($ch.is('[type="radio"]')) {
