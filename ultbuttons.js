@@ -8,7 +8,7 @@
 		return this
 			.css('user-select', 'none') //FF, Chrome
 			.on('selectstart', false); //IE
-    };
+	};
 
 	$.fn.ultButtonset = function() {
 		this.buttonset.apply(this, arguments);
