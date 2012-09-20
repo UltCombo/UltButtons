@@ -29,13 +29,13 @@
 	}).on('mousedown', 'label.ui-button', function(e) {
 		if (e.which !== 1) return;
 		var $this = $(this);
-		//using this selector to support eccentric ids, e.g. input[id="foo.bar"]
-		//stores the checked state of the input during the mousedown event to check agaisnt on mouseup
+		//the following selector is used to support eccentric ids, e.g. `input[id="foo.bar"]`.
+		//we store the checked state of the input in the label during the mousedown event to check agaisnt on mouseup
 		$this.data('checked', $('input[id="'+ $this.attr('for') + '"]').prop('checked'));
 	}).on('mouseup', 'label.ui-button', function(e) {
 		if (e.which !== 1) return;
 		var $this = $(this),
-			$ch = $('input[id="'+ $this.attr('for') + '"]'),
+			$ch = $('input[id="' + $this.attr('for') + '"]'),
 			ch = $ch[0],
 			targ = $.UltC.mdtarg;
 
