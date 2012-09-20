@@ -48,21 +48,19 @@
 				//if the ui button firing the mouseup handler is the same that triggered the last mousedown handler and the checked state didn't change after
 				//the jQuery UI handled the events (hence the setTimeout), we do the magic
 				if ($this.data('checked') === ch.checked) {
-					if (ch.type === 'radio') {
-						if (!ch.checked) {
-							ch.checked = true;
-							$('input[type="radio"][name="' + ch.name + '"]').not(ch).each(function() {
-								$('label[for="' + this.id + '"]').removeClass('ui-state-active').attr('aria-pressed', false);
-							});
-							$this.addClass('ui-state-active').attr('aria-pressed', true);
-							$ch.trigger('change');
-						}
-					} else {
+					if (ch.type === 'checkbox') {
 						var inversechecked = !ch.checked;
 						ch.checked = inversechecked;
 						if (inversechecked) $this.addClass('ui-state-active');
 						else $this.removeClass('ui-state-active');
 						$this.attr('aria-pressed', inversechecked);
+						$ch.trigger('change');
+					} else if (ch.type === 'radio' && !ch.checked) {
+						ch.checked = true;
+						$('input[type="radio"][name="' + ch.name + '"]').not(ch).each(function() {
+							$('label[for="' + this.id + '"]').removeClass('ui-state-active').attr('aria-pressed', false);
+						});
+						$this.addClass('ui-state-active').attr('aria-pressed', true);
 						$ch.trigger('change');
 					}
 				}
