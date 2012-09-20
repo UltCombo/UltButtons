@@ -1,27 +1,26 @@
+/*jshint curly:false, strict:false, browser:true, jquery:true */
 (function($) {
-	$.UltC || ($.UltC = {});
+	$.UltC = $.UltC || {};
 
 	var helperDiv = document.createElement('div');
 	$.UltC.unselectableSupport = helperDiv.hasOwnProperty && helperDiv.hasOwnProperty('unselectable');
 
 	$.fn.disableSelection = function() {
-		if ($.UltC.unselectableSupport) this.contents().andSelf().prop('unselectable', 'on'); //Opera
-		return this
-			.css('user-select', 'none') //FF, Chrome
-			.on('selectstart', false); //IE
+		if ($.UltC.unselectableSupport) this.contents().andSelf().prop('unselectable', 'on'); //unselectable for Opera
+		return this.css('user-select', 'none').on('selectstart', false); //user-select for FF, Chrome; selectstart for IE
 	};
 
 	$.fn.ultButtonset = function() {
 		this.buttonset.apply(this, arguments);
 		this.find('label').disableSelection();
 		return this;
-	}
+	};
 	$.fn.ultButton = function() {
 		this.button.apply(this, arguments);
 		return this.each(function() {
 			$('label[for="' + this.id + '"]').disableSelection();
 		});
-	}
+	};
 
 	$(document).mousedown(function(e) {
 		if (e.which !== 1) return;
