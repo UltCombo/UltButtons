@@ -1,8 +1,8 @@
-(function($, undefined) {
+(function($) {
 	$.UltC || ($.UltC = {});
 
 	var helperDiv = document.createElement('div');
-	$.UltC.unselectableSupport = helperDiv.hasOwnProperty !== undefined && helperDiv.hasOwnProperty('unselectable');
+	$.UltC.unselectableSupport = helperDiv.hasOwnProperty && helperDiv.hasOwnProperty('unselectable');
 
 	$.fn.disableSelection = function() {
 		if ($.UltC.unselectableSupport) this.contents().andSelf().prop('unselectable', 'on'); //Opera
