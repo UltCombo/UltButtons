@@ -29,7 +29,9 @@
 	}).on('mousedown', 'label.ui-button', function(e) {
 		if (e.which !== 1) return;
 		var $this = $(this);
-		$this.data('checked', $('input[id="'+ $this.attr('for') + '"]')[0].checked);
+		//using this selector to support eccentric ids, e.g. input[id="foo.bar"]
+		//stores the checked state of the input during the mousedown event to check agaisnt on mouseup
+		$this.data('checked', $('input[id="'+ $this.attr('for') + '"]').prop('checked'));
 	}).on('mouseup', 'label.ui-button', function(e) {
 		if (e.which !== 1) return;
 		var $this = $(this),
@@ -38,8 +40,12 @@
 		setTimeout(function() {
 			if (ch.disabled) return;
 			var targ = $.UltC.mdtarg;
+			//usually, the click target is the span inside the label.ui-button hence the `$this.has(targ).length`. It also takes care of user-created elements inside the label e.g. images
+			//but if the user manages to click in the default 1px border of the label, the target will be the label element itself: targ === $this[0]
+			//if the ui button firing the mouseup handler is the same that triggered the last mousedown handler and the checked state didn't change after
+			//the jQuery UI handled the events (hence the setTimeout), we do the magic
 			if ($this.data('checked') === ch.checked && ($this.has(targ).length || targ === $this[0])) {
-				if ($ch.is('[type="radio"]')) {
+				if (ch.type === 'radio') {
 					if (!ch.checked) {
 						ch.checked = true;
 						$('input[type="radio"][name="' + ch.name + '"]').not(ch).each(function() {
