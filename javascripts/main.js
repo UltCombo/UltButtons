@@ -1,14 +1,15 @@
-(function($) {
+(function($, undefined) {
 	$.UltC || ($.UltC = {});
 
-	$.UltC.unselectableSupport = document.createElement('div').hasOwnProperty('unselectable');
+	var helperDiv = document.createElement('div');
+	$.UltC.unselectableSupport = helperDiv.hasOwnProperty !== undefined && helperDiv.hasOwnProperty('unselectable');
 
 	$.fn.disableSelection = function() {
 		if ($.UltC.unselectableSupport) this.contents().andSelf().prop('unselectable', 'on'); //Opera
 		return this
 			.css('user-select', 'none') //FF, Chrome
 			.on('selectstart', false); //IE
-    };
+	};
 
 	$.fn.ultButtonset = function() {
 		this.buttonset.apply(this, arguments);
