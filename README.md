@@ -40,8 +40,10 @@ Then just call the improved `.ultButton()`/`.ultButtonset()` instead of the nati
 ### 1.1
 - disableSelection: Fixed unselectable property for nested elements inside buttons in Opera;
 - disableSelection: Fixed userSelect for Firefox and Chrome when using jQuery 1.7;
-- buttonset/disableSelection: Fixed the buttonset method to don't assume that all labels inside a buttonset container are checkbox/radio button widgets;
+//- buttonset/disableSelection: Fixed the buttonset method to don't assume that all labels inside a buttonset container are checkbox/radio button widgets;
 - Unobstrusiveness: No longer utilizes `.data()` to store checked state; removed the `$.UltC` namespace. Still adds the `disableSelection` method to the jQuery object prototype for backwards compatibility with older versions which also exposed it.
+overrides the UI's `$.ui.button.prototype._create`, meaning you can now call `.button()`/`.buttonset()` on elements normally after including the ultbuttons script and all accessibility improvements will be applied automatically. This deprecates the `$.fn.ultButton` and `$.fn.ultButtonset` which are now deprecated and serve as an alias to their counterpart `$.fn.button` and `$.fn.buttonset` methods.
+add reenable on destroy method
 
 ### 1.01
 - Micro-optimizations.
