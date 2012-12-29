@@ -8,7 +8,7 @@ Improves jQuery UI Checkbox/Radio Buttons functionality.
 - Fixes [~~#5518 Button: Incorrect state after double click in Firefox~~](http://bugs.jqueryui.com/ticket/5518) - now fixed with my [PR #841](https://github.com/jquery/jquery-ui/pull/841),  milestone set to jQuery UI 1.10;
 - Works around [Firefox bug #608180 Double/rapid clicking a checkbox label does not work as expected](https://bugzilla.mozilla.org/show_bug.cgi?id=608180), providing the expected result;
 - Fixes [#7665 Button: Radio button & checkboxes ignore mouseclicks for minor mouse movements](http://bugs.jqueryui.com/ticket/7665). Also, if you can spare some time, analyze and provide your support to my proposed definitive fix at [PR #854](https://github.com/jquery/jquery-ui/pull/854)!;
-- Turns UI checkbox/radio buttons's text unselectable, very close to an actual button (dragging the mouse to outside of the button may start a selection on some browsers);
+- Turns UI checkbox/radio buttons's text unselectable, very close to an actual button (dragging the mouse to outside of the button may start a selection in some browsers);
 - Provides additional `$.fn.disableSelection()` and `$.fn.reenableSelection()` methods so you can undo the select-ability changes if you'd like or even apply these to any other elements in your page.
 
 ##Support
@@ -34,7 +34,7 @@ Then just make use of the now improved jQuery UI's `.button()`/`.buttonset()` wi
 - UltButtons does not create any extra markup, instead, it works on top of the original jQuery UI `button`/`buttonset` methods.
 - The plugin also does not use any globals.
 - The plugin requires jQuery 1.7 at least, recommended is 1.8+.
-- Always attach your `change` handlers with jQuery, the plugin will not fire handlers natively attached nor attached through other libraries (e.g. Prototype). But if you desperately need an workaround, see the disccssion at [Issue #2](https://github.com/UltCombo/UltButtons/issues/2).
+- Always attach your `change` handlers with jQuery, the plugin will not fire handlers natively attached nor attached through other libraries (e.g. Prototype). However, if you desperately need an workaround, see the discussion at [Issue #2](https://github.com/UltCombo/UltButtons/issues/2).
 
 ##Changelog
 
@@ -52,7 +52,7 @@ Then just make use of the now improved jQuery UI's `.button()`/`.buttonset()` wi
     - No longer utilizes `.data()` to store checked state;
     - No longer attaches permanent handlers to `document`.
 
-###1.01
+###1.0.1
 - Micro-optimizations.
 
 ###1.0
