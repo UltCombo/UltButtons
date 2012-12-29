@@ -91,26 +91,26 @@
 
 <ul>
 <li>
-<p><strong>Core</strong></p>
+<strong>Core</strong>
 
 <ul>
 <li>UltButtons now override the jQuery UI Button widget prototype's <code>_create</code> and <code>_destroy</code> methods, meaning you can now call <code>.button()</code>/<code>.buttonset()</code> on elements after including the ultbuttons script and all accessibility improvements will be applied automatically. This deprecates the <code>$.fn.ultButton</code> and <code>$.fn.ultButtonset</code> methods which now serve as aliases to their counterpart <code>$.fn.button</code> and <code>$.fn.buttonset</code> methods (for back-compat only);</li>
 <li>Added the <code>$.fn.reenableSelection()</code> method which is used in the UI button prototype's <code>_destroy</code> method;</li>
-<li>Removed the <code>$.UltC</code> namespace.<br><br>
+<li>Removed the <code>$.UltC</code> namespace.<br>
 </li>
 </ul>
 </li>
 <li>
-<p><strong>disableSelection</strong></p>
+<strong>disableSelection</strong>
 
 <ul>
 <li>Fixed userSelect for Firefox and Chrome when using jQuery 1.7;</li>
-<li>Fixed unselectable property for nested elements inside buttons in Opera.<br><br>
+<li>Fixed unselectable property for nested elements inside buttons in Opera.<br>
 </li>
 </ul>
 </li>
 <li>
-<p><strong>Unobstrusiveness</strong></p>
+<strong>Unobstrusiveness</strong>
 
 <ul>
 <li>No longer utilizes <code>.data()</code> to store checked state;</li>
