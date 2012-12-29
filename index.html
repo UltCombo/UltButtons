@@ -7,6 +7,8 @@
     <meta name="description" content="Ultbuttons : Improves jQuery UI Checkbox/Radio Buttons." />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/trontastic/jquery-ui.css" />
+	<style>.ui-widget{font-size:12px}</style>
 
     <title>Ultbuttons</title>
   </head>
@@ -51,7 +53,18 @@
 
 <h2>Demo</h2>
 
-<p>Check out the <a href="http://ultcombo.github.com/UltButtons/">Project Page</a>!</p>
+<p>Checkboxes buttonset:</p>
+<div id="format">
+	<input type="checkbox" id="check1" /><label for="check1">B</label><input type="checkbox" id="check2" /><label for="check2">I</label><input type="checkbox" id="check3" /><label for="check3">U</label>
+</div>
+
+<p>Custom label button:</p>
+<input type="checkbox" id="customlabel" /><label for="customlabel"></label>
+
+<p>Radios buttonset:</p>
+<div id="radios">
+	<input type="radio" id="rad1" name="radio" /><label for="rad1">Yes</label><input type="radio" id="rad2" name="radio" /><label for="rad2">No</label>
+</div>
 
 <h2>How to use</h2>
 
@@ -117,11 +130,6 @@
 <p>MIT License.</p>
 
 
-$('#format').ultButtonset();
-$('#customlabel').ultButton({ label: 'custom label with &lt;span style="color:#F00;"&gt;nested element&lt;/span&gt;' });
-$('#radios').ultButtonset();
-$('#normalbuttons').ultButtonset();
-
       </section>
     </div>
 
@@ -133,7 +141,14 @@ $('#normalbuttons').ultButtonset();
       </footer>
     </div>
 
-    
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.js"></script>
+<script src="javascripts/ultbuttons1.1.min.js"></script>
+<script>
+$('#format').ultButtonset();
+$('#customlabel').ultButton({ label: 'custom label with <span style="color:#F00;">nested element</span>' });
+$('#radios').ultButtonset();
+$('#normalbuttons').ultButtonset();
+</script>
   </body>
 </html>
