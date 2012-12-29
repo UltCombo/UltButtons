@@ -1,105 +1,139 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Ultbuttons : Improves jQuery UI Checkbox/Radio Buttons." />
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/themes/trontastic/jquery-ui.css" />
-	<style type="text/css">.ui-widget{ font-size:12px !important; }</style>
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>UltButtons by UltCombo</title>
+    <title>Ultbuttons</title>
   </head>
 
   <body>
 
-    <header>
-      <div class="container">
-        <h1>UltButtons</h1>
-        <h2>Improves jQuery UI Checkbox/Radio Buttons.</h2>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/UltCombo/UltButtons">View on GitHub</a>
 
-        <section id="downloads">
-          <a href="https://github.com/UltCombo/UltButtons/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/UltCombo/UltButtons/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/UltCombo/UltButtons" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
+          <h1 id="project_title">Ultbuttons</h1>
+          <h2 id="project_tagline">Improves jQuery UI Checkbox/Radio Buttons.</h2>
 
-    <div class="container">
-      <section id="main_content">
-        <h3>Features</h3>
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/UltCombo/UltButtons/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/UltCombo/UltButtons/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
 
-		<ul>
-			<li>Fixes a jQuery UI bug when double-clicking a checkbox/radio UI button in Firefox which makes the button display the opposite styling of its actual checked state;</li>
-			<li>Allows for dragging the mouse while holding down the click and still triggering the state change. The original UI checkbox/radio buttons will cancel the event completely if you move the mouse more than ~3px while clicking, <strong>UltButtons</strong> triggers the state change even if you hold down the click, move the cursor out of the button and move it back in releasing the click (as an actual button would)!</li>
-			<li>Turns UI checkbox/radio buttons's text <strong>unselectable</strong>, as an actual button behaves.</li>
-		</ul>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p></p>
 
-		<h3>Support</h3>
-		<p>IE6+ and all modern desktop browsers - Firefox, Chrome, Opera, Safari.</p>
+<h1>UltButtons</h1>
 
-		<h3>Demo</h3>
-		<p>Checkboxes buttonset:</p>
-		<div id="format">
-			<input type="checkbox" id="check1" /><label for="check1">B</label><input type="checkbox" id="check2" /><label for="check2">I</label><input type="checkbox" id="check3" /><label for="check3">U</label>
-		</div>
+<p>Improves jQuery UI Checkbox/Radio Buttons functionality.</p>
 
-		<p>Custom label button:</p>
-		<input type="checkbox" id="customlabel" /><label for="customlabel"></label>
+<h2>Features</h2>
 
-		<p>Radios buttonset:</p>
-		<div id="radios">
-			<input type="radio" id="rad1" name="radio" /><label for="rad1">Yes</label><input type="radio" id="rad2" name="radio" /><label for="rad2">No</label>
-		</div>
+<ul>
+<li>Fixes <a href="http://bugs.jqueryui.com/ticket/5518"><del>#5518 Button: Incorrect state after double click in Firefox</del></a> - now fixed with my <a href="https://github.com/jquery/jquery-ui/pull/841">PR #841</a>,  milestone set to jQuery UI 1.10;</li>
+<li>Works around <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=608180">Firefox bug #608180 Double/rapid clicking a checkbox label does not work as expected</a>, providing the expected result;</li>
+<li>Fixes <a href="http://bugs.jqueryui.com/ticket/7665">#7665 Button: Radio button &amp; checkboxes ignore mouseclicks for minor mouse movements</a>. Also, if you can spare some time, analyze and provide your support to my proposed definitive fix at <a href="https://github.com/jquery/jquery-ui/pull/854">PR #854</a>!;</li>
+<li>Turns UI checkbox/radio buttons's text unselectable, very close to an actual button (dragging the mouse to outside of the button may start a selection in some browsers);</li>
+<li>Provides additional <code>$.fn.disableSelection()</code> and <code>$.fn.reenableSelection()</code> methods so you can undo the select-ability changes if you'd like or even apply these to any other elements in your page.</li>
+</ul><h2>Support</h2>
 
-		<br />
+<p>IE6+ and all modern desktop browsers - Firefox, Chrome, Opera, Safari.</p>
 
-		<h3>How to use</h3>
-		<p>Include the plugin script after jQuery and jQuery UI:</p>
-		<pre><code>&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"&gt;&lt;/script&gt;
-&lt;script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.js"&gt;&lt;/script&gt;
-&lt;link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/themes/trontastic/jquery-ui.css" /&gt;
-&lt;script src="ultbuttons1.01.min.js"&gt;&lt;/script&gt;</code></pre>
+<h2>Demo</h2>
 
-		<p>Then just call <code>.ultButtonset()</code>/<code>.ultButton()</code> as you would with <code>.buttonset()</code>/<code>.button()</code></p>
+<p>Check out the <a href="http://ultcombo.github.com/UltButtons/">Project Page</a>!</p>
 
-		<h3>Notes</h3>
-		<ul>
-			<li>Calling <code>.ultButton()</code>/<code>.ultButtonset()</code> on actual buttons won't have any improvement effect, as <code>.button()</code>/<code>.buttonset()</code> works as it should on actual buttons. This plugin is intended for Checkboxes/Radio UI buttons, but calling it on actual buttons won't break anything either. <code>=]</code></li>
-			<li><strong>UltButtons</strong> does not create any extra markup, instead, it works on top of the original jQuery UI <code>button</code>/<code>buttonset</code> methods.</li>
-			<li>The plugin also does not use any globals, it creates a namespace inside the jQuery object to store the necessary data.</li>
-			<li>It adds 3 listeners to the <code>document</code>, so if you ever need to call <code>$(document).off('mousedown')</code> or such, specify a named function handler to remove in the second parameter, to warrant that it won't break the plugin functionality.</li>
-			<li>The plugin requires jQuery 1.7 at least, recommended is 1.8+</li>
-		</ul>
+<h2>How to use</h2>
+
+<p>Include jQuery, jQuery UI and then ultbuttons.js, e.g.:</p>
+
+<pre><code>&lt;link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/trontastic/jquery-ui.css" /&gt;
+&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.js"&gt;&lt;/script&gt;
+&lt;script src="ultbuttons1.1.min.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<p>Then just make use of the now improved jQuery UI's <code>.button()</code>/<code>.buttonset()</code> widgets. <code>=]</code> Check out the jQuery UI button widget's <a href="http://jqueryui.com/button/#checkbox">official documentation</a> if you're not sure how to use it.</p>
+
+<h2>Notes</h2>
+
+<ul>
+<li>UltButtons does not create any extra markup, instead, it works on top of the original jQuery UI <code>button</code>/<code>buttonset</code> methods.</li>
+<li>The plugin also does not use any globals.</li>
+<li>The plugin requires jQuery 1.7 at least, recommended is 1.8+.</li>
+<li>Always attach your <code>change</code> handlers with jQuery, the plugin will not fire handlers natively attached nor attached through other libraries (e.g. Prototype). However, if you desperately need an workaround, see the discussion at <a href="https://github.com/UltCombo/UltButtons/issues/2">Issue #2</a>.</li>
+</ul><h2>Changelog</h2>
+
+<h3>1.1</h3>
+
+<ul>
+<li>
+<p><strong>Core</strong></p>
+
+<ul>
+<li>UltButtons now override the jQuery UI Button widget prototype's <code>_create</code> and <code>_destroy</code> methods, meaning you can now call <code>.button()</code>/<code>.buttonset()</code> on elements after including the ultbuttons script and all accessibility improvements will be applied automatically. This deprecates the <code>$.fn.ultButton</code> and <code>$.fn.ultButtonset</code> methods which now serve as aliases to their counterpart <code>$.fn.button</code> and <code>$.fn.buttonset</code> methods (for back-compat only);</li>
+<li>Added the <code>$.fn.reenableSelection()</code> method which is used in the UI button prototype's <code>_destroy</code> method;</li>
+<li>Removed the <code>$.UltC</code> namespace.<br><br>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>disableSelection</strong></p>
+
+<ul>
+<li>Fixed userSelect for Firefox and Chrome when using jQuery 1.7;</li>
+<li>Fixed unselectable property for nested elements inside buttons in Opera.<br><br>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Unobstrusiveness</strong></p>
+
+<ul>
+<li>No longer utilizes <code>.data()</code> to store checked state;</li>
+<li>No longer attaches permanent handlers to <code>document</code>.</li>
+</ul>
+</li>
+</ul><h3>1.0.1</h3>
+
+<ul>
+<li>Micro-optimizations.</li>
+</ul><h3>1.0</h3>
+
+<ul>
+<li>Initial release.</li>
+</ul><h2>License</h2>
+
+<p>MIT License.</p>
 
 
-		<h3 style="margin-bottom:0px;">Authored by</h3>
-		<ul style="margin:10px 0 20px;">
-			<li><a href="https://github.com/ultcombo" class="user-mention">@UltCombo</a></li>
-		</ul>
-		<h3 style="margin-bottom:0px;">Contributors</h3>
-		<ul style="margin:10px 0 20px;">
-			<li><a href="https://github.com/szabyg" class="user-mention">@szabyg</a></li>
-		</ul>
-
+$('#format').ultButtonset();
+$('#customlabel').ultButton({ label: 'custom label with &lt;span style="color:#F00;"&gt;nested element&lt;/span&gt;' });
+$('#radios').ultButtonset();
+$('#normalbuttons').ultButtonset();
 
       </section>
     </div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.js"></script>
-	<script src="javascripts/ultbuttons1.01.min.js"></script>
-	<script>
-	$('#format').ultButtonset();
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Ultbuttons maintained by <a href="https://github.com/UltCombo">UltCombo</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
 
-	$('#customlabel').ultButton({ label: 'custom label' });
+    
 
-	$('#radios').ultButtonset();
-
-	$('#normalbuttons').ultButtonset();
-	</script>
   </body>
 </html>
