@@ -1,7 +1,7 @@
 UltButtons
 ==========
 
-Improves jQuery UI Checkbox/Radio Buttons functionality.
+Improves jQuery UI Checkbox/Radio Buttons usability.
 
 ##Features
 
@@ -40,7 +40,7 @@ Then just make use of the now improved jQuery UI's `.button()`/`.buttonset()` wi
 
 ###1.1
 - **Core**
-    - UltButtons now override the jQuery UI Button widget prototype's `_create` and `_destroy` methods, meaning you can now call `.button()`/`.buttonset()` on elements after including the ultbuttons script and all accessibility improvements will be applied automatically. This deprecates the `$.fn.ultButton` and `$.fn.ultButtonset` methods which now serve as aliases to their counterpart `$.fn.button` and `$.fn.buttonset` methods (for back-compat only);
+    - UltButtons now extend the jQuery UI Button widget prototype's `_create` and `_destroy` methods, meaning you can now call `.button()`/`.buttonset()` on elements after including the ultbuttons script and all accessibility improvements will be applied automatically. This deprecates the `$.fn.ultButton` and `$.fn.ultButtonset` methods which now serve as aliases to their counterpart `$.fn.button` and `$.fn.buttonset` methods (for back-compat only);
     - Added the `$.fn.reenableSelection()` method which is used in the UI button prototype's `_destroy` method;
     - Removed the `$.UltC` namespace.<br><br>
 
