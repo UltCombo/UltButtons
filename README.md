@@ -1,3 +1,9 @@
+# DEPRECATED
+
+All shims, workarounds and p(r)olyfills have one ultimate goal, which is being deprecated. I'm happy to announce that we have finally achieved this goal. We encourage you to update to jQuery UI 1.10.4 and discard this plugin.
+
+However, if you're stuck with an older version of jQuery UI, or really like the `disableSelection` feature, feel free to keep using this plugin. `:)`
+
 UltButtons
 ==========
 
@@ -5,9 +11,9 @@ Improves jQuery UI Checkbox/Radio Buttons usability.
 
 ##Features
 
-- Fixes [~~#5518 Button: Incorrect state after double click in Firefox~~](http://bugs.jqueryui.com/ticket/5518) - now fixed with my [PR #841](https://github.com/jquery/jquery-ui/pull/841),  milestone set to jQuery UI 1.10;
-- Works around [Firefox bug #608180 Double/rapid clicking a checkbox label does not work as expected](https://bugzilla.mozilla.org/show_bug.cgi?id=608180), providing the expected result;
-- Fixes [#7665 Button: Radio button & checkboxes ignore mouseclicks for minor mouse movements](http://bugs.jqueryui.com/ticket/7665). Also, if you can spare some time, analyze and provide your support to my proposed definitive fix at [PR #854](https://github.com/jquery/jquery-ui/pull/854)!;
+- ~~Fixes [#5518 Button: Incorrect state after double click in Firefox](http://bugs.jqueryui.com/ticket/5518)~~ - now fixed with my [PR #841](https://github.com/jquery/jquery-ui/pull/841),  milestone set to jQuery UI 1.10;
+- ~~Works around [Firefox bug #608180 Double/rapid clicking a checkbox label does not work as expected](https://bugzilla.mozilla.org/show_bug.cgi?id=608180), providing the expected result~~ - now fixed as of Firefox 24 or so;
+- ~~Fixes [#7665 Button: Radio button & checkboxes ignore mouseclicks for minor mouse movements](http://bugs.jqueryui.com/ticket/7665). Also, if you can spare some time, analyze and provide your support to my proposed definitive fix at [PR #854](https://github.com/jquery/jquery-ui/pull/854)!~~ now fixed by my [PR #1120](https://github.com/jquery/jquery-ui/pull/1120), landed on jQuery UI 1.10.4;
 - Turns UI checkbox/radio buttons's text unselectable, very close to an actual button (dragging the mouse to outside of the button may start a selection in some browsers);
 - Provides additional `$.fn.disableSelection()` and `$.fn.reenableSelection()` methods so you can undo the select-ability changes if you'd like or even apply these to any other elements in your page.
 
