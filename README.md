@@ -1,6 +1,6 @@
 # DEPRECATED
 
-All shims, workarounds and p(r)olyfills have one ultimate goal, which is being deprecated. I'm happy to announce that we have finally achieved this goal. We encourage you to update to jQuery UI 1.10.4 and discard this plugin.
+All shims, workarounds and p(r)olyfills have one ultimate goal, which is being deprecated. I'm happy to announce that we have finally achieved this goal. We encourage you to update to jQuery UI >= 1.10.4 and discard this plugin.
 
 However, if you're stuck with an older version of jQuery UI, or really like the `disableSelection` feature, feel free to keep using this plugin. `:)`
 
