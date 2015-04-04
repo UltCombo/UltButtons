@@ -47,6 +47,7 @@ Then just make use of the now improved jQuery UI's `.button()`/`.buttonset()` wi
 ## Changelog
 
 ### 1.1
+
 - **Core**
     - UltButtons now extend the jQuery UI Button widget prototype's `_create` and `_destroy` methods, meaning you can now call `.button()`/`.buttonset()` on elements after including the ultbuttons script and all accessibility improvements will be applied automatically. This deprecates the `$.fn.ultButton` and `$.fn.ultButtonset` methods which now serve as aliases to their counterpart `$.fn.button` and `$.fn.buttonset` methods (for back-compat only);
     - Added the `$.fn.reenableSelection()` method which is used in the UI button prototype's `_destroy` method;
@@ -61,10 +62,13 @@ Then just make use of the now improved jQuery UI's `.button()`/`.buttonset()` wi
     - No longer attaches permanent handlers to `document`.
 
 ### 1.0.1
+
 - Micro-optimizations.
 
 ### 1.0
+
 - Initial release.
 
 ## License
+
 MIT License.
